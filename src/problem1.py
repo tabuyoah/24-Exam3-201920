@@ -126,7 +126,7 @@ def problem1(n):
       :rtype: int
     """
     # -------------------------------------------------------------------------
-    # TODO: 2. Implement and test this function.
+    # DONE: 2. Implement and test this function.
     #          Tests have been written for you (above).
     # **** IMPORTANT ****:
     # We supplied a   fibonacci   function above.
@@ -139,17 +139,23 @@ def problem1(n):
     # and THEN try the full-credit version.
     # As always, CONTINUE to the next problem if you are STUCK on this one.
     # -------------------------------------------------------------------------
-    total = 0
+    count = 0
+    a = 0
+    b = 1
     while True:
-        a = 0
-        b = 1
-        if b > n:
-            return a
-        b = a + b
-        a = b
+        if count % 2 == 0:
+            a = a + b
+            # print(a)
+            if a >= n:
+                return b
+        if count % 2 == 1:
+            b = a + b
+            # print(b)
+            if b >= n:
+                return a
+        count = count + 1
 
-
-###############################################################################
+    ###############################################################################
 # Our tests use the following to print error messages in red.
 # Do NOT change it.  You do NOT have to do anything with it.
 ###############################################################################

@@ -148,14 +148,28 @@ def problem5(seq_of_seq):
     # TODO: 2. Implement and test this function.
     #          Tests have been written for you (above).
     # -------------------------------------------------------------------------
+    large_num = 0
     seq = []
     for k in range(len(seq_of_seq)):
         for j in range(len(seq_of_seq[k])):
-            a = seq_of_seq[k][0]
-            if seq_of_seq[k][j] > a:
-                b = seq_of_seq[k][j]
-        seq = seq + [b]
+            if seq_of_seq[k][j] > large_num:
+                large_num = seq_of_seq[k][j]
+        if large_num == 0:
+            seq = seq
+        else:
+            seq = seq + [large_num]
+            large_num = 0
     return seq
+
+
+    # seq = []
+    # for k in range(len(seq_of_seq)):
+    #     for j in range(len(seq_of_seq[k])):
+    #         a = seq_of_seq[k][0]
+    #         if seq_of_seq[k][j] > a:
+    #             b = seq_of_seq[k][j]
+    #     seq = seq + [b]
+    # return seq
 
 ###############################################################################
 # Our tests use the following to print error messages in red.
